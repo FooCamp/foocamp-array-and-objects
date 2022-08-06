@@ -1,0 +1,25 @@
+body {
+  font-family: "Fira Code", monospace;
+  background-color: black;
+  color:white;
+}
+
+pre {
+  font-family: "Fira Code", monospace !important;
+}
+
+button {
+  background-color: #f9008e;
+  color: white;
+  border: 0;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  background-color: #af0264;
+}

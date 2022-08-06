@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link href="styles/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>JS Basics: Arrays / Objects.</h1>
+    <h2>
+      Para ver la consola: pulsar en tu navegador 'F12' o (click derecho ->
+      inspeccionar)
+    </h2>
+    <p>En la ventana de DevTools buscar la barra de consola.</p>
+    <hr />
+    <h3>Creando Arrays</h3>
+    <button onclick="createArray()">Crear un Array y llenarlo</button> <- Crear un array
+    vacio y asignar valores al mismo
+    <pre><code class="language-javascript">
+      // usar let cuando se va a modificar un array posteriormente
+      let emptyArray = ["primer valor"];
+      emptyArray[1] = "2 valor";
+      emptyArray[2] = 3 + " valor"; // se pueden agregar operaciones cuando se crean campos de arrays
+      emptyArray[5] = "cuarto valor"; // si me salto indices se crean espacios vacios en el array
+      console.log(emptyArray);
+      // output :
+      // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+    </code></pre>
+    <br />
+    <button onclick="createFilledArray()">Crear un Array lleno</button> <- Crear un
+    array lleno
+    <pre><code class="language-javascript">
+      // usar const si NO se va a modificar el array posteriormente
+      const filledArray = [
+        "primer valor",
+        "2 valor",
+        3 + " valor", // al agregar una ',' y no colocar valores se crea un espacio vacio en el array
+        ,
+        ,
+        "cuarto valor",
+      ];
+      console.log(filledArray);
+      // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+    </code></pre>
+    <br />
+    <hr />
+    <h3>Operaciones basicas de arrays</h3>
+    <button onclick="arrayLength()">Array.length</button> <- devuelve el tamaño de un array
+    <pre><code class="language-javascript">
+      const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
+      console.log("numeric array:", numericArray);
+      console.log("numeric array length:", numericArray.length);
+    </code></pre>
+    <script src="js/script.js"></script>
+    <script src="js/prism.js"></script>
+  </body>
+</html>
