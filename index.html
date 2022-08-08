@@ -18,6 +18,7 @@
     </h2>
     <p>En la ventana de DevTools buscar la barra de consola.</p>
     <hr />
+    <h2>ARRAYS</h2>
     <h3>Creando Arrays</h3>
     <button onclick="createArray()">Crear un Array y llenarlo</button> <- Crear
     un array vacio y asignar valores al mismo
@@ -91,7 +92,8 @@
     </code></pre>
 
     <br />
-    <button onclick="arrayAccess()">Array[index]</button> <- acceder a un registro de array
+    <button onclick="arrayAccess()">Array[index]</button> <- acceder a un
+    registro de array
     <pre><code class="language-javascript">
       const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
       console.log("numeric array:", numericArray);
@@ -105,7 +107,8 @@
     </code></pre>
 
     <br />
-    <button onclick="knowIfIsArray()">Array[index]</button> <- saber si un objeto es un array
+    <button onclick="knowIfIsArray()">Array[index]</button> <- saber si un
+    objeto es un array
     <pre><code class="language-javascript">
       const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
       // typeof reconoce los arrays como objetos
@@ -113,13 +116,92 @@
       // Array.isArray es un metodo de ECMAScript que reconoce si algo es un array
       console.log(Array.isArray(numericArray));
       console.log(Array.isArray("soy un array?"));
-      // instandeof verifica si un objeto en su cadena de prototipos contiene la propiedad prototype de un constructor dado
+      // instandeof verifica si un objeto en su cadena 
+      // de prototipos contiene la propiedad prototype de un constructor dado
       console.log(numericArray instanceof Array);
     </code></pre>
 
+    <br />
+    <button onclick="concatArrays()">concat()</button> <- unir 2 o mas arrays
+    <pre><code class="language-javascript">
+      const arr1 = ["Cecilie", "Lone"];
+      const arr2 = ["Emil", "Tobias", "Linus"];
+      const arr3 = ["Robin"];
+      //array1.concat(array2, array3, ..., arrayX)
+      const nombres = arr1.concat(arr2, arr3);
+    </code></pre>
 
-    Bibliografia
-    https://es.wikipedia.org/wiki/ECMAScript
+    <br />
+    <button onclick="sortArray()">sort() / reverse()</button> <- ordenar un
+    array
+    <pre><code class="language-javascript">
+      const fruits = ["Banana", 2, "Orange", 1, "Apple", 3, "Mango"];
+      fruits.sort();
+      fruits.reverse();
+    </code></pre>
+
+    <br />
+    <button onclick="pushArray()">push()</button> <- agregar valores en el array
+    <pre><code class="language-javascript">
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.push("Kiwi", "Lemon");
+    </code></pre>
+
+    <br />
+    <button onclick="spliceArray()">splice()</button> <- recortar o insertar
+    valores en un array
+    <pre><code class="language-javascript">
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      // array.splice(index, howmany, item1, ....., itemX)
+
+      // agrega a partir de la posicion "2" tomando "0" objetos desde esa posicion
+      fruits.splice(2, 0, "Lemon", "Kiwi");
+      // agrega nada a partir de la posicion "2" tomando "2" objetos desde esa posicion
+      // como no se agrega nada esas 2 posiciones se eliminan y los registros se mueven de lugar
+      fruits.splice(2, 2);
+      // agrega a partir de la posicion "2" tomando "1" objetos a partir de la posicion
+      fruits.splice(2, 1, "Lemon", "Kiwi");
+    </code></pre>
+
+    <br />
+    <button onclick="sliceArray()">slice()</button> <- recortar o insertar
+    valores en un array
+    <pre><code class="language-javascript">
+      const fruits = [
+        "Banana", // 0 | -7
+        "Orange", // 1 | -6
+        "Lemon",  // 2 | -5
+        "Apple",  // 3 | -4
+        "Mango",  // 4 | -3
+        "Papaya", // 5 | -2
+        "Kiwi",   // 6 | -1
+      ];
+      // toma los elementos de las posiciones 2, 3 y 4 desde el inicio
+      const positiveSplice = fruits.slice(1, 4);
+      // toma los elementos de las posiciones -3 y -2 desde el final
+      const negativeSplice = fruits.slice(-3, -1);
+    </code></pre>
+
+    <br />
+    <h3>Funciones complejas</h3>
+    <button onclick="everyArray()">every()</button> <- revisar si todos los
+    registros cumplen con una condicion
+    <pre><code class="language-javascript">
+      function checkAge(age, value) {
+        return age > value;
+      }
+    
+      // array.every(function(currentValue, index, arr), thisValue)
+      const ages = [32, 33, 16, 40];
+      console.log("todos son > 18", ages.every((age)=> checkAge(age, 18)));
+      console.log("todos son > 0", ages.every((age)=> checkAge(age, 0)));
+    </code></pre>
+
+
+    <hr />
+    <h2>OBJECTS</h2>
+
+    Bibliografia https://es.wikipedia.org/wiki/ECMAScript
     https://www.w3schools.com/js/js_arrays.asp
     https://www.w3schools.com/js/js_array_methods.asp
     https://www.w3schools.com/js/js_array_sort.asp

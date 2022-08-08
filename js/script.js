@@ -80,3 +80,76 @@ const knowIfIsArray = () => {
   // instandeof verifica si un objeto en su cadena de prototipos contiene la propiedad prototype de un constructor dado
   console.log("numericArray instanceof Array", numericArray instanceof Array);
 };
+
+const concatArrays = () => {
+  // array1.concat(array2, array3, ..., arrayX)
+  const arr1 = ["Cecilie", "Lone"];
+  const arr2 = ["Emil", "Tobias", "Linus"];
+  const arr3 = ["Robin"];
+  console.log("Array 1:", arr1);
+  console.log("Array 2:", arr2);
+  console.log("Array 3:", arr3);
+  const nombres = arr1.concat(arr2, arr3);
+  console.log("arr1.concat(arr2, arr3)", nombres);
+};
+
+const everyArray = () => {
+  function checkAge(age, value) {
+    return age > value;
+  }
+  // array.every(function(currentValue, index, arr), thisValue)
+  const ages = [32, 33, 16, 40];
+  console.log(
+    "todos son > 18",
+    ages.every((age) => checkAge(age, 18))
+  );
+  console.log(
+    "todos son > 0",
+    ages.every((age) => checkAge(age, 0))
+  );
+};
+
+const sortArray = () => {
+  const fruits = ["Banana", 2, "Orange", 1, "Apple", 3, "Mango"];
+  console.log("sort", fruits.sort());
+  console.log("reverse", fruits.reverse());
+};
+
+const pushArray = () => {
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  console.log("fruits", fruits);
+  fruits.push("Kiwi", "Lemon");
+  console.log('fruits.push("Kiwi", "Lemon")', fruits);
+};
+
+const spliceArray = () => {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  console.log("fruits", fruits);
+  fruits.splice(2, 0, "Lemon", "Kiwi");
+  console.log('fruits.splice(2, 0, "Lemon", "Kiwi")', fruits);
+
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.splice(2, 2);
+  console.log("fruits.splice(2, 2)", fruits);
+
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.splice(2, 1, "Lemon", "Kiwi");
+  console.log('fruits.splice(2, 1, "Lemon", "Kiwi")', fruits);
+};
+
+const sliceArray = () => {
+  const fruits = [
+    "Banana",
+    "Orange",
+    "Lemon",
+    "Apple",
+    "Mango",
+    "Papaya",
+    "Kiwi",
+  ];
+  console.log('fruits', fruits);
+  const positiveSplice = fruits.slice(1, 4);
+  console.log("fruits.slice(1, 4)", positiveSplice);
+  const negativeSplice = fruits.slice(-3, -1);
+  console.log("fruits.slice(-3, -1)", negativeSplice);
+};

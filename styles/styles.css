@@ -9,6 +9,7 @@ pre {
 }
 
 button {
+  font-family: "Fira Code", monospace;
   background-color: #f9008e;
   color: white;
   border: 0;
