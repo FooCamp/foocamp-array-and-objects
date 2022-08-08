@@ -19,8 +19,8 @@
     <p>En la ventana de DevTools buscar la barra de consola.</p>
     <hr />
     <h3>Creando Arrays</h3>
-    <button onclick="createArray()">Crear un Array y llenarlo</button> <- Crear un array
-    vacio y asignar valores al mismo
+    <button onclick="createArray()">Crear un Array y llenarlo</button> <- Crear
+    un array vacio y asignar valores al mismo
     <pre><code class="language-javascript">
       // usar let cuando se va a modificar un array posteriormente
       let emptyArray = ["primer valor"];
@@ -30,10 +30,15 @@
       console.log(emptyArray);
       // output :
       // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+
+      let cars = ["Saab", "Volvo", "BMW"];
+      console.log(cars);
+      cars = ["Toyota", "Volvo", "Audi"]; // GOOD
+      console.log(cars);
     </code></pre>
     <br />
-    <button onclick="createFilledArray()">Crear un Array lleno</button> <- Crear un
-    array lleno
+    <button onclick="createFilledArray()">Crear un Array lleno</button> <- Crear
+    un array lleno
     <pre><code class="language-javascript">
       // usar const si NO se va a modificar el array posteriormente
       const filledArray = [
@@ -45,17 +50,83 @@
         "cuarto valor",
       ];
       console.log(filledArray);
-      // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+      // output: ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+
+      const cars = ["Saab", "Volvo", "BMW"];
+      console.log(cars);
+      cars = ["Toyota", "Volvo", "Audi"]; // ERROR, el codigo deja de ejecutarse, no se va a ejecutar la linea siguiente
+      console.log(cars);
+    </code></pre>
+    <br />
+    <button onclick="createArrayWithFunction()">
+      Crear un Array con funciones
+    </button>
+    <- Crear un array con la funcion new Array
+    <pre><code class="language-javascript">
+      // la declaracion de new Array no permite crear campos vacios 
+      // ya que crea un array nuevo a partir de unos valores dados y en orden
+      const newArray = new Array(
+        "primer valor",
+        "2 valor",
+        3 + " valor",
+        "cuarto valor"
+      );
+      console.log(newArray);
+      // output: ['primer valor', '2 valor', '3 valor', 'cuarto valor']
+
+      // ADVERTENCIA -> el metodo new Array puede generar errores inesperados
+      const newArray2 = new Array(20);
+      console.log(newArray2);
     </code></pre>
     <br />
     <hr />
+
     <h3>Operaciones basicas de arrays</h3>
-    <button onclick="arrayLength()">Array.length</button> <- devuelve el tamaño de un array
+    <button onclick="arrayLength()">Array.length</button> <- devuelve el tamaño
+    de un array
     <pre><code class="language-javascript">
       const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
       console.log("numeric array:", numericArray);
       console.log("numeric array length:", numericArray.length);
     </code></pre>
+
+    <br />
+    <button onclick="arrayAccess()">Array[index]</button> <- acceder a un registro de array
+    <pre><code class="language-javascript">
+      const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
+      console.log("numeric array:", numericArray);
+      // accede al registro del index = 1 es decir el segundo registro
+      console.log("index = 0:", numericArray[0]); 
+      // accede al registro del index = 1 es decir el segundo registro
+      console.log("index = 1:", numericArray[1]); 
+      // accede al ultimo registro, como el primer indice es 0 por logica
+      // el ultimo registro es igual a la longitud del array - 1
+      console.log("index = last:", numericArray[numericArray.length - 1]); 
+    </code></pre>
+
+    <br />
+    <button onclick="knowIfIsArray()">Array[index]</button> <- saber si un objeto es un array
+    <pre><code class="language-javascript">
+      const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
+      // typeof reconoce los arrays como objetos
+      console.log(typeof numericArray);
+      // Array.isArray es un metodo de ECMAScript que reconoce si algo es un array
+      console.log(Array.isArray(numericArray));
+      console.log(Array.isArray("soy un array?"));
+      // instandeof verifica si un objeto en su cadena de prototipos contiene la propiedad prototype de un constructor dado
+      console.log(numericArray instanceof Array);
+    </code></pre>
+
+
+    Bibliografia
+    https://es.wikipedia.org/wiki/ECMAScript
+    https://www.w3schools.com/js/js_arrays.asp
+    https://www.w3schools.com/js/js_array_methods.asp
+    https://www.w3schools.com/js/js_array_sort.asp
+    https://www.w3schools.com/js/js_array_iteration.asp
+    https://www.w3schools.com/js/js_array_const.asp
+    https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array
+    <br />
     <script src="js/script.js"></script>
     <script src="js/prism.js"></script>
   </body>
