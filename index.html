@@ -23,7 +23,7 @@
     <button onclick="createArray()">Crear un Array y llenarlo</button> <- Crear
     un array vacio y asignar valores al mismo
     <pre><code class="language-javascript">
-      // usar let cuando se va a modificar un array posteriormente
+      // procurar usar let cuando se va a modificar un array posteriormente
       let emptyArray = ["primer valor"];
       emptyArray[1] = "2 valor";
       emptyArray[2] = 3 + " valor"; // se pueden agregar operaciones cuando se crean campos de arrays
@@ -41,7 +41,7 @@
     <button onclick="createFilledArray()">Crear un Array lleno</button> <- Crear
     un array lleno
     <pre><code class="language-javascript">
-      // usar const si NO se va a modificar el array posteriormente
+      // procurar usar const si NO se va a modificar el array posteriormente
       const filledArray = [
         "primer valor",
         "2 valor",
@@ -197,18 +197,145 @@
       console.log("todos son > 0", ages.every((age)=> checkAge(age, 0)));
     </code></pre>
 
+    <br />
+    <button onclick="mapArray()">map()</button> <- recorrer un array
+    <pre><code class="language-javascript">
+      const namesArray = [
+        "andres",
+        "camilo",
+        "carolina",
+        "felipe",
+        "anna",
+        "ramiro",
+        "juan",
+        "pedro",
+        "luis",
+        "salvador",
+        "david",
+        "anselmo",
+        "florinda",
+      ];
+
+      // recorrer un array con un ciclo
+      for (let i = 0; i < namesArray.length; i++) {
+        console.log("index:", i, "value:", namesArray[i]);
+      }
+    
+      // funcion .map()
+      namesArray.map((name, index) => {
+        console.log("index:", index, "value:", name);
+      });
+    
+      const numbers = [1, 5, 10, 15];
+      const doubles = numbers.map(function (x) {
+        return x * 2;
+      });
+    </code></pre>
+
+    <br />
+    <h2>TAREA</h2>
+    Este ejercicio es muy usado en entrevistas de trabajo para desarrolladores JavaScript:
+    <pre><code class="language-javascript">
+      1. crear una funcion javascript llamada fillArray que reciba 2 parametros
+      (numeroInicial y numeroFinal)
+      esta funcion debe crear un array y llenarlo con los numeros desde el valor incial hasta el final
+      _______________
+      const numericArray = fillArray(1, 10);
+      // output: numericArray = [1,2,3,4,5,6,7,8,9,10];
+      _______________
+
+      2. crear una funcion que recorra el array generado en el punto 1
+      y genere un nuevo array llamado 'fizzBuzzArray' que cumpla las siguientes donciciones:
+      fizzBuzzArray[i] = colocar "FizzBuzz" en el campo si 'i es divisible por 3 y 5'.
+      fizzBuzzArray[i] = colocar "Fizz" si 'i es divisible por 3'.
+      fizzBuzzArray[i] = colocar "Buzz" si 'i es divisible por 5'.
+      fizzBuzzArray[i] = colocar el 'mismo valor del campo convertido en string' si no se cumple ninguna de las condiciones anteriores.
+      
+      sugerencia: para saber si un numero es divisible por otro usar la operacion 
+      i % n, si esto es = 0 el numero es divisible (el residuo de su division es 0)
+
+      __________________
+      Ejemplo
+      Input: numeroInicial = 3, numeroFinal = 16
+      // fizzBuzzArray: ["Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz", "16"]
+    </code></pre>
 
     <hr />
     <h2>OBJECTS</h2>
-
-    Bibliografia https://es.wikipedia.org/wiki/ECMAScript
-    https://www.w3schools.com/js/js_arrays.asp
-    https://www.w3schools.com/js/js_array_methods.asp
-    https://www.w3schools.com/js/js_array_sort.asp
-    https://www.w3schools.com/js/js_array_iteration.asp
-    https://www.w3schools.com/js/js_array_const.asp
-    https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array
+    <hr />
+    <h2>Bibliografia</h2>
+    <section class="linksSection">
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://es.wikipedia.org/wiki/ECMAScript"
+            title="Wikipedia ECMAscript"
+            >Wikipedia ECMAscript</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://www.w3schools.com/js/js_arrays.asp"
+            title="w3schools arays"
+            >w3schools arays</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://www.w3schools.com/js/js_array_methods.asp"
+            title="w3schools arays methods"
+            >w3schools arays methods</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://www.w3schools.com/js/js_array_sort.asp"
+            title="w3schools arays sort"
+            >w3schools arays sort</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://www.w3schools.com/js/js_array_iteration.asp"
+            title="w3schools array iterations"
+            >w3schools array iterations</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://www.w3schools.com/js/js_array_const.asp"
+            title="w3schools array const and let uses"
+            >w3schools array const and let uses</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array"
+            title="developer.mozilla.org Objects"
+            >developer.mozilla.org Objects</a
+          >
+        </li>
+      </ul>
+    </section>
     <br />
+    <hr />
+    <footer>
+      <b> Page made by Andrés Felipe Jaimes Sánchez for HUGE Foocamp </b>
+    </footer>
     <script src="js/script.js"></script>
     <script src="js/prism.js"></script>
   </body>

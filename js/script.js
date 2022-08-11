@@ -3,6 +3,21 @@ const consoleHeaderStyle =
 console.log("%cArrays y Objetos en JavaScript", consoleHeaderStyle);
 
 const numericArray = [3, 56, 8, 1, 70, 65, 2, 40, 9, 8, 25, 3, 5];
+const namesArray = [
+  "andres",
+  "camilo",
+  "carolina",
+  "felipe",
+  "anna",
+  "ramiro",
+  "juan",
+  "pedro",
+  "luis",
+  "salvador",
+  "david",
+  "anselmo",
+  "florinda",
+];
 
 const createArray = () => {
   // usar let cuando se va a modificar un array posteriormente
@@ -147,9 +162,30 @@ const sliceArray = () => {
     "Papaya",
     "Kiwi",
   ];
-  console.log('fruits', fruits);
+  console.log("fruits", fruits);
   const positiveSplice = fruits.slice(1, 4);
   console.log("fruits.slice(1, 4)", positiveSplice);
   const negativeSplice = fruits.slice(-3, -1);
   console.log("fruits.slice(-3, -1)", negativeSplice);
+};
+
+const mapArray = () => {
+  // recorrer un array con un ciclo
+  console.log("ciclo FOR");
+  for (let i = 0; i < namesArray.length; i++) {
+    console.log("index:", i, "value:", namesArray[i]);
+  }
+
+  console.log("funcion map()");
+  // funcion .map()
+  namesArray.map((name, index) => {
+    console.log("index:", index, "value:", name);
+  });
+
+  const numbers = [1, 5, 10, 15];
+  const doubles = numbers.map(function (x) {
+    return x * 2;
+  });
+  console.log("numbers", numbers);
+  console.log("doubles", doubles);
 };
