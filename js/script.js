@@ -189,3 +189,113 @@ const mapArray = () => {
   console.log("numbers", numbers);
   console.log("doubles", doubles);
 };
+
+const createObject = () => {
+  const myCar = new Object();
+  myCar.make = "Ford";
+  myCar.model = "Mustang";
+  myCar.year = 1969;
+
+  console.log(myCar);
+  // un objeto puede contener otros objetos dentro del mismo
+  let pikachu = {
+    nombre: "billy",
+    edad: 10,
+    comidaFavorita: "sancocho",
+    tipo: "electrico",
+    movimientos: {
+      mov1: { nombreMovimiento: "impact trueno", potencia: 80 },
+      mov2: { nombreMovimiento: "cola de hierro", potencia: 100 },
+      mov3: { nombreMovimiento: "bola trueno", potencia: 60 },
+      mov4: { nombreMovimiento: "ataque rapido", potencia: 20 },
+    },
+  };
+
+  pikachu.edad = 15;
+  console.log(pikachu);
+};
+
+const accessObject = () => {
+  const gato = {
+    nombre: "kiki",
+    raza: "carey",
+    edad: 5,
+  };
+  // puedo llamar el campo desde una variable tambien
+  const key = "edad";
+  console.log(
+    `nombre: ${gato.nombre}`,
+    "raza:",
+    gato["raza"],
+    "edad:",
+    gato[key]
+  );
+
+  let pikachu = {
+    nombre: "billy",
+    edad: 10,
+    comidaFavorita: "sancocho",
+    tipo: "electrico",
+    movimientos: {
+      mov1: { nombreMovimiento: "impact trueno", potencia: 80 },
+      mov2: { nombreMovimiento: "cola de hierro", potencia: 100 },
+      mov3: { nombreMovimiento: "bola trueno", potencia: 60 },
+      mov4: { nombreMovimiento: "ataque rapido", potencia: 20 },
+    },
+  };
+
+  // misma manera de obtener los campos de un objeto
+  console.log(pikachu.movimientos.mov1.nombreMovimiento);
+  console.log(pikachu["movimientos"]["mov1"]["nombreMovimiento"]);
+  console.log(pikachu["movimientos"].mov1["nombreMovimiento"]);
+};
+
+const objectMethod = () => {
+  const persona = {
+    nombre: "Andres",
+    age: 30,
+    // usar una funcion como valor
+    saludo: function () {
+      console.log("Hola como estas");
+    },
+  };
+
+  persona.saludo(); // hola como estas
+};
+
+const filterObject = () => {
+  const users = {
+    John: { username: "johncam112", age: 19 },
+    Daniel: { username: "Dandandel1", age: 21 },
+    Ruth: { username: "rutie01", age: 24 },
+    Joe: { username: "Joemathuel", age: 28 },
+  };
+
+  console.log("usuarios:", users);
+  const selectedUsers = ["Ruth", "Daniel", "Andres"];
+  console.log("usuarios a buscar:", selectedUsers);
+
+  // extraer las 'keys' de un objeto (revisar el constructor del objeto)
+  console.log("llaves de usuarios:", Object.keys(users));
+
+  console.log(
+    "usuarios que coinciden con las llaves",
+    Object.keys(users).filter((key) => selectedUsers.includes(key))
+  );
+  console.log(
+    "extraer registros de el objeto users",
+    Object.keys(users)
+      .filter((key) => selectedUsers.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = users[key];
+        return obj;
+      }, {})
+  );
+
+  const filteredUsers = Object.keys(users)
+    .filter((key) => selectedUsers.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = users[key];
+      return obj;
+    }, {});
+};

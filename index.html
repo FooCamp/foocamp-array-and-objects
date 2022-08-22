@@ -234,7 +234,8 @@
 
     <br />
     <h2>TAREA</h2>
-    Este ejercicio es muy usado en entrevistas de trabajo para desarrolladores JavaScript:
+    Este ejercicio es muy usado en entrevistas de trabajo para desarrolladores
+    JavaScript:
     <pre><code class="language-javascript">
       1. crear una funcion javascript llamada fillArray que reciba 2 parametros
       (numeroInicial y numeroFinal)
@@ -262,6 +263,95 @@
 
     <hr />
     <h2>OBJECTS</h2>
+    <button onclick="createObject()">crear objetos</button> <- crear un objeto
+    <pre><code class="language-javascript">
+      const myCar = new Object();
+      myCar.make = "Ford";
+      myCar.model = "Mustang";
+      myCar.year = 1969;
+
+      // un objeto puede ser tan complejo como queramos
+      // por ejemplo puede contener otros objetos dentro del mismo
+      const pikachu = {
+        nombre: "billy",
+        edad: 10,
+        comidaFavorita: "sancocho",
+        tipo: "electrico",
+        movimientos: {
+          mov1: { nombreMovimiento: "impact trueno", potencia: 80 },
+          mov2: { nombreMovimiento: "cola de hierro", potencia: 100 },
+          mov3: { nombreMovimiento: "bola trueno", potencia: 60 },
+          mov4: { nombreMovimiento: "ataque rapido", potencia: 20 },
+        },
+      };
+    </code></pre>
+
+    <br />
+    <button onclick="accessObject()">object['key']</button> <- acceder a registros de un objeto
+    <pre><code class="language-javascript">
+      const gato = {
+        nombre: "kiki",
+        raza: "carey",
+        edad: 5,
+      };
+      // puedo llamar el campo desde una variable tambien
+      const key = "edad";
+      console.log(`nombre: ${gato.nombre}`, "raza:", gato.raza, "edad:", gato[key]);
+
+      // ejemplo usando a pikachu:
+      // mismo resultado, distintas maneras de obtener los campos de un objeto
+      console.log(pikachu.movimientos.mov1.nombreMovimiento);
+      console.log(pikachu['movimientos']['mov1']['nombreMovimiento']);
+      console.log(pikachu['movimientos'].mov1['nombreMovimiento']);
+    </code></pre>
+
+    <br />
+    <button onclick="objectMethod()">usar funciones dentro de objetos</button> <- usar funciones dentro de objetos
+    <pre><code class="language-javascript">
+      const persona = {
+        nombre: "Andres",
+        age: 30,
+        // usar una funcion como valor
+        saludo: function () {
+          console.log("Hola como estas");
+        },
+      };
+    
+      persona.saludo(); // hola como estas
+    </code></pre>
+
+    <br />
+    <h2>Ejemplo de Funciones complejas de objetos</h2>
+    <button onclick="filterObject()">filtro de usuarios</button> <- encontrar valores dentro de un objeto
+    <pre><code class="language-javascript">
+      const persona = {
+        nombre: "Andres",
+        age: 30,
+        // usar una funcion como valor
+        saludo: function () {
+          console.log("Hola como estas");
+        },
+      };
+    
+      persona.saludo(); // hola como estas
+    </code></pre>
+
+    <br />
+    <h2>TAREA</h2>
+    <pre><code class="language-javascript">
+      1. crear una funcion javascript que reciba un objeto con los siguientes parametros:
+      * nombre
+      * edad
+      * profesion
+      * color favorito
+      * altura
+      * hobbies (minimo 2 hobbies)
+      y retorne el siguiente texto
+      "Hola mi nombre es (nombre), tengo (edad) años, mido (altura)cm, estudié (profesion) mi color favorito es el (color favorito) y mis hobbies son (hobbies separados por ,)"
+
+      // output ejemplo:
+      "Hola mi nombre es Andres felipe, tengo 31 años, mido 190cm, estudié ingenieria de sistemas, mi color favorito es el negro y mis hobbies son los juegos de mesa, dibujar y cocinar"
+    </code></pre>
     <hr />
     <h2>Bibliografia</h2>
     <section class="linksSection">
